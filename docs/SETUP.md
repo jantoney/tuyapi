@@ -15,13 +15,15 @@ This method is fast and easy. If you're having trouble manually linking your dev
 
 This method requires you to create a developer account on [iot.tuya.com](https://iot.tuya.com). It doesn't matter if the device(s) are currently registered in the Tuya Smart app or Smart Life app or not.
 
-1. Create a new account on [iot.tuya.com](https://iot.tuya.com) and make sure you are logged in. Click "Cloud Development" in the top nav bar and click "Create". After you've created a new project, click into it. The access ID and access key are equivalent to the API key and API secret values need in step 6.
+1. Create a new account on [iot.tuya.com](https://iot.tuya.com) and make sure you are logged in. Click **Cloud** then **Project** from the left hand menu. If this is the first time on the platform, click **Try it Free**, you'll get access to a 3 month free trial of the cloud development platform (*). and click "Create". After you've created a new project, click into it. The access ID and access key are equivalent to the API key and API secret values need in step 6.
 2. Click "App Service" in the top nav bar and click "App SDK" from the left side. Click on "Obtain SDK" and enter whatever you want for the package names and channel ID (for the Android package name, you must enter a string beginning with `com.`). Take note of the **Channel ID** you entered. This is equivalent to the `schema` value needed in step 6. Ignore any app key and app secret values you see in this section as they are not used.
 3. Click "Cloud Development" in the top nav bar and click the project you created earlier. Under "Device Management" click "Link Device" on the left side. Click the "Link devices by Apps" tab, and click "Add Apps". Check the app you just created and click "Ok".
 4. On the same page, click "API Group" on the left side. Change the status to **Open** for the following three API Groups by clicking "Apply" for each line, entering any reason, and clicking "OK": "Authorization Management", "Device Management", "Device Control", "User Management", "Network Management", "Data Service" and "Device Statistics". It can take 10-15 minutes for these changes to take effect. 
 5. Put your devices into linking mode.  This process is specific to each type of device, find instructions in the Tuya Smart app. Usually this consists of turning it on and off several times or holding down a button.
 6. On the command line, run `tuya-cli link --api-key <your api key> --api-secret <your api secret> --schema <your schema/Channel ID> --ssid <your WiFi name> --password <your WiFi password> --region us`.  For the region parameter, choose the two-letter country code from `us`, `eu`, and `cn` that is geographically closest to you.
 7. Your devices should link in under a minute and the parameters required to control them will be printed out to the console. If you experience problems, first make sure any smart phone/tablet app that you use with your devices is completely closed and not attempting to communicate with any of the devices.
+
+(*) Information of the 3 Months free trial of the cloud development platform is current as of November 2020. [Reference](https://developer.tuya.com/en/docs/iot/open-api/quick-start/membership-service?id=K9m8k45jwvg9j)
 
 ### Troubleshooting
 
@@ -49,3 +51,4 @@ This method is deprecated because Tuya-branded apps have started to encrypt thei
 6. Open Tuya Smart and refresh the list of devices by "pulling down".
 7. A list of ID and key pairs should appear in the console.
 8. It's recommended to untrust the root certificate after you're done for security purposes.
+
